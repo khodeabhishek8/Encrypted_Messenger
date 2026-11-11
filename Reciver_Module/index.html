@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5f2">
+  <title>ESP Messenger | Receiver</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/receive" aria-label="ESP Messenger receiver home">
+      <span class="brand-mark">E</span>
+      <span>ESP Messenger</span>
+    </a>
+    <span class="module-label">RECEIVER MODULE</span>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro">
+      <p class="eyebrow">DEVICE-TO-DEVICE MESSAGING</p>
+      <h1>Your messages,<br><em>live as they arrive.</em></h1>
+      <p class="intro-copy">Incoming text from your ESP device appears here instantly. No page refresh and no polling.</p>
+    </section>
+
+    <section class="receiver-card" aria-label="Receiver interface">
+      <div class="card-top">
+        <div>
+          <p class="card-kicker">INCOMING MESSAGE</p>
+          <h2>Message console</h2>
+        </div>
+        <div class="status-pill" id="peerStatus" aria-live="polite">
+          <span class="status-dot"></span>
+          <span id="peerStatusText">Connected</span>
+        </div>
+      </div>
+
+      <label for="receivedText">Received text</label>
+      <textarea id="receivedText" readonly spellcheck="false" placeholder="Waiting for a message from the ESP..."></textarea>
+      <div class="card-foot">
+        <span class="live-mark"><i></i> LIVE RECEIVER</span>
+        <span id="messageCount">0 messages received</span>
+      </div>
+    </section>
+
+    <p class="page-note"><span class="note-icon">⌁</span> This page stays connected to the ESP through WebSocket. New serial input is pushed to this screen automatically.</p>
+  </main>
+
+  <footer><span>ESP8266</span><span class="footer-separator">•</span><span>Receiver interface</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
